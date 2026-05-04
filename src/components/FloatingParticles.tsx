@@ -18,19 +18,18 @@ interface Particle {
   opacity: number;
 }
 
-const PARTICLE_COUNT = 40;
+export default function FloatingParticles({ count = 40 }: { count?: number }) {
+  // Generate particles based on count
+  const particles: Particle[] = Array.from({ length: count }, (_, i) => ({
+    id: i,
+    left: `${seededRandom(i * 3) * 100}%`,
+    top: `${seededRandom(i * 3 + 1) * 100}%`,
+    size: seededRandom(i * 3 + 2) * 4 + 1,
+    duration: seededRandom(i * 5) * 4 + 3,
+    delay: seededRandom(i * 7) * 3,
+    opacity: seededRandom(i * 11) * 0.6 + 0.2,
+  }));
 
-const particles: Particle[] = Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
-  id: i,
-  left: `${seededRandom(i * 3) * 100}%`,
-  top: `${seededRandom(i * 3 + 1) * 100}%`,
-  size: seededRandom(i * 3 + 2) * 4 + 1,
-  duration: seededRandom(i * 5) * 4 + 3,
-  delay: seededRandom(i * 7) * 3,
-  opacity: seededRandom(i * 11) * 0.6 + 0.2,
-}));
-
-export default function FloatingParticles() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       {particles.map((p) => (
