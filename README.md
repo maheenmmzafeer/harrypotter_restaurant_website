@@ -20,12 +20,6 @@ This is a premium, immersive digital experience built for **The Smokey Cauldron*
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Typography**: [Google Fonts](https://fonts.google.com/)
 
-## 🚀 Getting Started
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Run the development server: `npm run dev`
-4. Open [http://localhost:3000](http://localhost:3000)
-
 ## 🗺️ Location
 **The Smokey Cauldron**
 F-6 Markaz, Islamabad, Pakistan
